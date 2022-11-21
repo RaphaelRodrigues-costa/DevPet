@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
 
 export const home = (req: Request, res: Response) => {
-    res.send('Home no controller');
-    // return res.render('pages/page');
+    return res.render('pages/page');
 }
 
 export const dogs = (req: Request, res: Response) => {

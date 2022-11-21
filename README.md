@@ -1,4 +1,12 @@
 # DevPet
 
-# Requisitos para iniciar o projeto
-Instalar de forma global, nodemon, typescript e ts-node, com o comando "sudo npm i -g nodemon typescript ts-node"
+# Pré-requisitos globais
+sudo npm i -g nodemon typescript ts-node
+
+# Instalação
+
+npm install
+
+# Para rodar o projeto
+
+npm run start-dev

@@ -122,16 +122,19 @@ const data: Pet[] = [
   },
 ];
 
-
-
 export const Pets = {
   // pegar tosdos os pets 
   getAll: (): Pet[] => data,
-
+  // filtrar por tipo 
+  getFromType: (type: Pet['type']):Pet[] => data.filter(item => item.type === type),
+  // filtrar por nome 
+  getFromName: (name: Pet['name']):Pet[] => data.filter(item => item.name.toLowerCase().indexOf(name.toLowerCase()) > -1),
 }
+// indexOf a fun,cão retorna -1 se não encontrar a existenci do item na matriz 
+// const letras = ['a','b'];
+// letras.indexOf('a') // 0 foi encontrado no index 0 
+// letras.indexOf('c') // -1 não foi encontrado 
+// letras.indexOf(search, index) // index = a busca inicia apartir daquele index e ele conta até achar na matriz 
+// letras.indexOf('a', 1) // 1 
 
-
-// filtrar por tipo 
-
-// filtrar por nome 
-
+// indexOf() não diferencia maiusculo de minusculo, recomentado transforma as letras para resultados mais coerentes "toLowerCase()_"

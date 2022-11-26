@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Pets }  from "../models/pet"
 
 /**
  * Aqui a função é utilizada no rander para definir onde o usuario esta em nosso menu de navegação,
@@ -8,12 +9,16 @@ import {createMenuObject} from "../helpers/createMenuObject"
 
 
 export const home = (req: Request, res: Response) => {
+    const list = Pets.getAll()
+    console.log(list);
+    
     return res.render('pages/page', {
         menu: createMenuObject('all'),
         banner: {
             title: "Todos os animais",
             background: 'allanimals.jpg'
-        }
+        },
+        list
     });
 }
 
